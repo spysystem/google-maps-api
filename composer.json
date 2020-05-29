@@ -1,51 +1,39 @@
 {
-	"name": "spysystem/google-maps-api",
-	"description": "Google Maps geolocation basic API",
-	"keywords": [
-		"openapitools",
-		"openapi-generator",
-		"php",
-		"sdk",
-		"rest",
-		"api"
-	],
-	"homepage": "http://openapi-generator.tech",
-	"license": "proprietary",
-	"authors": [
-		{
-			"name": "OpenAPI-Generator contributors",
-			"homepage": "https://openapi-generator.tech"
-		}
-	],
-	"repositories": [
-		{
-			"type": "composer",
-			"url": "https://repo.packagist.com/spysystem/"
-		},
-		{
-			"packagist.org": false
-		}
-	],
-	"require": {
-		"php": ">=5.6",
-		"ext-curl": "*",
-		"ext-json": "*",
-		"ext-mbstring": "*",
-		"guzzlehttp/guzzle": "^6.2"
-	},
-	"require-dev": {
-		"phpunit/phpunit": "^4.8",
-		"squizlabs/php_codesniffer": "~2.6",
-		"friendsofphp/php-cs-fixer": "~2.12"
-	},
-	"autoload": {
-		"psr-4": {
-			"GoogleMaps\\": "lib/"
-		}
-	},
-	"autoload-dev": {
-		"psr-4": {
-			"GoogleMaps\\": "test/"
-		}
-	}
+    "name": "GIT_USER_ID/GIT_REPO_ID",
+    "description": "Google Maps API Integration",
+    "keywords": [
+        "openapitools",
+        "openapi-generator",
+        "openapi",
+        "php",
+        "sdk",
+        "rest",
+        "api"
+    ],
+    "homepage": "https://openapi-generator.tech",
+    "license": "unlicense",
+    "authors": [
+        {
+            "name": "OpenAPI-Generator contributors",
+            "homepage": "https://openapi-generator.tech"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.4",
+        "squizlabs/php_codesniffer": "~2.6",
+        "friendsofphp/php-cs-fixer": "~2.12"
+    },
+    "autoload": {
+        "psr-4": { "GoogleMaps\\" : "lib/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "GoogleMaps\\" : "test/" }
+    }
 }
