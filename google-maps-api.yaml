@@ -1,0 +1,96 @@
+openapi: '3.0.1'
+info:
+  version: '1.0.0'
+  title: Google Maps API
+  license:
+    name: GPL
+  description: Google Maps API Integration
+servers:
+  - url: https://maps.googleapis.com/maps/api
+
+tags:
+  - name: Geocode
+
+paths:
+  /geocode/json:
+    get:
+      summary: Find coordinates for a given address
+      operationId: FindCoordinates
+      tags:
+        - Geocode
+      parameters:
+        - in: query
+          name: address
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: key
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: components
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GeocodeResponse'
+
+components:
+  schemas:
+    GeocodeResponse:
+      type: object
+      required:
+        - results
+        - status
+      properties:
+        'status':
+          type : string
+          enum:
+            - OK
+            - ZERO_RESULTS
+            - OVER_DAYLY_LIMIT
+            - REQUEST_DENIED
+            - INVALID_REQUEST
+            - UNKNOWN_ERROR
+        'results':
+          type: array
+          items:
+            $ref: '#/components/schemas/Result'
+
+    Result:
+      type: object
+      properties:
+        'geometry':
+          $ref: '#/components/schemas/Geometry'
+        'partial_match':
+          type: boolean
+        'formatted_address':
+          type: string
+
+    Geometry:
+      type: object
+      properties:
+        'location':
+          $ref: '#/components/schemas/Location'
+        'location_type':
+          type: string
+
+    Location:
+      type: object
+      required:
+        - lat
+        - lng
+      properties:
+        lat:
+          type: number
+          format: float
+        lng:
+          type: number
+          format: float

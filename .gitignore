@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+/.idea/**
+/vendor/
+!/.idea/vcs.xml
+!/.idea/codeStyleSettings.xml
+!/.idea/inspectionProfiles/profiles_settings.xml
+!/.idea/inspectionProfiles/SPY.xml
+!/.idea/encodings.xml
+!/.idea/php.xml
