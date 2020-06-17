@@ -10,6 +10,7 @@ servers:
 
 tags:
   - name: Geocode
+  - name: Timezone
 
 paths:
   /geocode/json:
@@ -41,6 +42,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GeocodeResponse'
+  /timezone/json:
+    get:
+      summary: Find timezone for the given coordinates
+      operationId: FindTimezone
+      tags:
+        - Timezone
+      parameters:
+        - in: query
+          name: location
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: timestamp
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: key
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimezoneResponse'
 
 components:
   schemas:
@@ -88,9 +118,27 @@ components:
         - lat
         - lng
       properties:
-        lat:
+        'lat':
           type: number
           format: float
-        lng:
+        'lng':
           type: number
           format: float
+
+    TimezoneResponse:
+      type: object
+      required:
+        - status
+      properties:
+        'dstOffset':
+          type: integer
+        'rawOffset':
+          type: integer
+        'status':
+          type: string
+        'timeZoneId':
+          type: string
+        'timeZoneName':
+          type: string
+        'errorMessage':
+          type: string
