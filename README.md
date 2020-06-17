@@ -86,6 +86,7 @@ All URIs are relative to *https://maps.googleapis.com/maps/api*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *GeocodeApi* | [**findCoordinates**](docs/Api/GeocodeApi.md#findcoordinates) | **GET** /geocode/json | Find coordinates for a given address
+*TimezoneApi* | [**findTimezone**](docs/Api/TimezoneApi.md#findtimezone) | **GET** /timezone/json | Find timezone for the given coordinates
 
 
 ## Documentation For Models
@@ -94,6 +95,7 @@ Class | Method | HTTP request | Description
  - [Geometry](docs/Model/Geometry.md)
  - [Location](docs/Model/Location.md)
  - [Result](docs/Model/Result.md)
+ - [TimezoneResponse](docs/Model/TimezoneResponse.md)
 
 
 ## Documentation For Authorization
